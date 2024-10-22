@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import { BigContainer, SmallContainer } from './styledComponents/gridItems'
+import { Container } from './styledComponents/general'
+import Filters from './components/Filters'
+import SelectedWells from './components/SelectedWells'
+import Map from './components/Map'
+import Container3DModel from './components/Container3DModel'
+import LateralGraphic from './components/LateralGraphic'
+import Container2DModel from './components/Container2DModel'
+import WellGraphic from './components/WellGraphic'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <SmallContainer>
+        <SelectedWells />
+        <Filters />
+      </SmallContainer>
+      <BigContainer>
+        <Map />
+        <Container3DModel />
+        <LateralGraphic />
+      </BigContainer>
+      <BigContainer>
+        <Container2DModel />
+        <WellGraphic />
+      </BigContainer>
+    </Container>
+  )
 }
 
-export default App;
+export default App
